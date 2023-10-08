@@ -43,7 +43,18 @@
               </tr>
             </tbody>
           </VTable>
+          <VBtn
+            color="warning"
+            @click="restart">
+            {{ $t('settings.restart') }}
+          </VBtn>
+          <VBtn
+            color="error"
+            @click="shutdown">
+            {{ $t('settings.shutdown') }}
+          </VBtn>
         </div>
+        <br />
         <AboutLinks v-if="!$vuetify.display.mobile" />
       </VCol>
       <VCol
@@ -163,6 +174,18 @@ if (remote.auth.currentUser?.Policy?.IsAdministrator) {
   systemInfo = (await remote.sdk.newUserApi(getSystemApi).getSystemInfo()).data;
 }
 
+async function restart() {
+  if (remote.auth.currentUser?.Policy?.IsAdministrator) {
+    await remote.sdk.newUserApi(getSystemApi).restartApplication()
+  }
+}
+
+async function shutdown() {
+  if (remote.auth.currentUser?.Policy?.IsAdministrator) {
+    await remote.sdk.newUserApi(getSystemApi).shutdownApplication()
+  }
+}
+
 const userItems = computed(() => {
   return [
     {
@@ -231,7 +254,7 @@ const adminSections = computed(() => {
         icon: IMdiKeyChain,
         name: t('settings.apiKeys.apiKeys'),
         description: t('settings.apiKeys.description'),
-        link: '/settings/apikeys'
+        link: undefined
       }
     ],
     [

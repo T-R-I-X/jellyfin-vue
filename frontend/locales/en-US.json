@@ -385,6 +385,8 @@
   "serverVersion": "Server version",
   "serverVersionTooLow": "Server version needs to be {version} or higher",
   "settings": {
+    "shutdown": "Shutdown",
+    "restart": "Restart",
     "apiKeys": {
       "accessToken": "Access token",
       "addApiKey": "Add an API key",
@@ -421,6 +423,18 @@
       "userName": "Username"
     },
     "help": "Help",
+    "libraries": {
+      "delete": "Delete",
+      "rename": "Rename",
+      "deleteAll": "Delete all",
+      "deleteAllDevicesError": "Error deleting all libraries",
+      "deleteAllDevicesSuccess": "All libraries deleted successfully",
+      "deleteConfirm": "Confirm library deletion",
+      "deleteDeviceError": "Error deleting library",
+      "deleteDeviceSuccess": "Library deleted successfully",
+      "deviceName": "Library name",
+      "libraries": "Libraries"
+    },
     "logsAndActivity": {
       "activity": "Activity",
       "failedGetActivity": "Unable to get activity",
