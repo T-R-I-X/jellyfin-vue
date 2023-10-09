@@ -6,7 +6,6 @@
     flat>
     <LoadingIndicator />
     <VAppBarNavIcon
-      v-if="$vuetify.display.mobile"
       @click="navigationDrawer = !navigationDrawer" />
     <AppBarButtonLayout @click="$router.back()">
       <template #icon>
